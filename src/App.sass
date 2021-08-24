@@ -31,16 +31,27 @@ main
 section
     height: 85%
     margin-top: 3.25rem
-
+h2
+    font-size: $title
 .card
-    @include displayFlex(column, center, start)
     padding: 1.25rem
-    border-color: $border
-    border-style: solid
-    border-width: 0px 1px 1px 1px
+    @include border(0px, 1px, 1px, 1px )
+    @include displayFlex(column, center, start)
     > h2
         font-size: $title
         color: $title-text
     > p
         font-size: $subtitle
         color: $subtitle-text
+.detail
+    padding: 1rem 3rem
+    > span
+        display: flex
+        justify-content: space-between
+        padding: 1rem 2rem
+        font-size: $title
+        color: $subtitle-text
+        @include border(0px, 0px, 1px, 0px)
+    a
+        color: $title-text
+        font-size: $title
