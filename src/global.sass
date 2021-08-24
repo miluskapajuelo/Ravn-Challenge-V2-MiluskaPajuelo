@@ -19,6 +19,7 @@ $weight-title: 400
 /** font-family **/
 $font-family: 'Roboto', sans-serif
 
+  
 @mixin spaceBlock($width)
   width: $width
 
@@ -27,3 +28,8 @@ $font-family: 'Roboto', sans-serif
   flex-direction: $direction
   justify-content: $justify
   align-items: $alignItems
+
+@mixin border($bt,$br,$bb,$bl)
+  border-color: $border
+  border-style: solid
+  border-width: $bt $br $bb $bl
