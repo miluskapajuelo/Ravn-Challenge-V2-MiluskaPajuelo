@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap')
 
-$text: #828282
+$subtitle-text: #828282
+$title-text: #333333
 $black: #121212
 $white: #ffffff
 $error: #EC5757
+$border: #d8d4d4
 
 /** font size & font weight **/
 
@@ -17,12 +19,11 @@ $weight-title: 400
 /** font-family **/
 $font-family: 'Roboto', sans-serif
 
+@mixin spaceBlock($width)
+  width: $width
+
 @mixin displayFlex ($direction, $justify, $alignItems) 
   display: flex
   flex-direction: $direction
   justify-content: $justify
   align-items: $alignItems
-
-@mixin main
-  width: 100vw
-  height: 100vh
