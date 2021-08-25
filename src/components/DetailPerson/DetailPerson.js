@@ -1,13 +1,15 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import {idPeople} from "./../../module/query"
+import {loadingPage, errorPage} from "./../../Assets/message"
+
 
 const DetailPerson = ({idPerson}) => { 
-    console.log(idPerson)
+    
     const id=  idPeople(idPerson)
     const {loading, error, data}= useQuery(id)
-    if(loading) return 'Loading';
-    if(error) return `error! ${error.message}`;
+    if(loading) return loadingPage;
+    if(error) return errorPage;
     return (
         <article className="detail">
         <h2>General Information</h2>
