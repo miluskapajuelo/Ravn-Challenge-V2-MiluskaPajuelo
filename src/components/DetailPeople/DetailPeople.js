@@ -1,21 +1,41 @@
 import React from "react";
 import "./DetailPeople.sass";
+import { useQuery, gql } from "@apollo/client";
 
-const DetailPeople = () => {
+const item = localStorage.getItem('people');
 
+const IDITEM = gql`query Root {
+  person(id: "${item}") {
+    birthYear
+    eyeColor
+    hairColor
+    skinColor
+    vehicleConnection {
+      vehicles {
+        name
+        id
+      }
+    }
+  }
+}`
+const DetailPeople = () => { 
+  const {loading, error, data}= useQuery(IDITEM);
+  if(loading) return 'Loading';
+  if(error) return `error! ${error.message}`;
   return (
-    <article className="detail">
+    (data !== undefined)?
+      <article className="detail">
       <h2>General Information</h2>
-      <span >Eye Color<a>Blue</a></span>
-      <span >Hair Color<a>Blond</a></span>
-      <span >Skin Color<a>Fair</a></span>
-      <span >Birth Year<a>19BBY</a></span>
+      <span >Eye Color<p>{data.person.eyeColor}</p></span>
+      <span >Hair Color<p>{data.person.hairColor}</p></span>
+      <span >Skin Color<p>{data.person.SkinColor}</p></span>
+      <span >Birth Year<p>{data.person.birthYear}</p></span>
       <br/>
       <br/>
       <h2>Vehicles</h2>
-      <span >Snowspeeder</span>
-      <span >Imperial Speeder Bike</span>
-    </article>
+      {data.person.vehicleConnection !== []?data.person.vehicleConnection.vehicles.map(vehicle => <span key={vehicle.id}>{vehicle.name}</span>):''}
+    </article>:''
+    
   );
 };
 
