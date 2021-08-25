@@ -1,42 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import "./DetailPeople.sass";
-import { useQuery, gql } from "@apollo/client";
+import { useLocation } from 'react-router-dom'
 
-const item = localStorage.getItem('people');
+import DetailPerson from './../DetailPerson/DetailPerson'
 
-const IDITEM = gql`query Root {
-  person(id: "${item}") {
-    birthYear
-    eyeColor
-    hairColor
-    skinColor
-    vehicleConnection {
-      vehicles {
-        name
-        id
-      }
-    }
-  }
-}`
 const DetailPeople = () => { 
-  const {loading, error, data}= useQuery(IDITEM);
-  if(loading) return 'Loading';
-  if(error) return `error! ${error.message}`;
-  return (
-    (data !== undefined)?
-      <article className="detail">
-      <h2>General Information</h2>
-      <span >Eye Color<p>{data.person.eyeColor}</p></span>
-      <span >Hair Color<p>{data.person.hairColor}</p></span>
-      <span >Skin Color<p>{data.person.SkinColor}</p></span>
-      <span >Birth Year<p>{data.person.birthYear}</p></span>
-      <br/>
-      <br/>
-      <h2>Vehicles</h2>
-      {data.person.vehicleConnection !== []?data.person.vehicleConnection.vehicles.map(vehicle => <span key={vehicle.id}>{vehicle.name}</span>):''}
-    </article>:''
-    
-  );
-};
+
+
+  const location = useLocation();
+  return (<>{location.state !== undefined ? <DetailPerson idPerson={location.state.id}/>:''}</>)
+  };
 
 export default DetailPeople;

@@ -1,32 +1,17 @@
-import React from "react";
 import "./CardPeople.sass";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
-import { setPeopleId } from "../../module/storage";
-import {Link} from "react-router-dom"
+import { useQuery } from "@apollo/client";
+import {TRACKS} from '../../module/query'
+import CardPerson from './../CardPerson/CardPerson'
 
 
-const CardPeople = ({ people }) => {
-  const detailPeople = () => {
-    setPeopleId(people.id);
+
+const CardPeople = () => { 
+    const {loading, error, data}= useQuery(TRACKS);
+    if(loading) return 'Loading';
+    if(error) return `error! ${error.message}`;
+    const dataPeople = data.allPeople.people
+
+  return (<>{dataPeople.map(people =>  <CardPerson key={people.id} people={people} />)}</>)
   };
-
-  return (
-    <article className="card">
-      <div className="card__detail">
-        <div>
-          <h2>{people.name}</h2>
-          <p>
-            {people.species !== null ? people.species.name : "Human"} from{" "}
-            {people.homeworld.name}
-          </p>
-        </div>
-        <Link to={{pathname:`/people/${people.id}`, state: people.id }} activeClass="active"><div onClick={detailPeople}>
-          <FontAwesomeIcon icon={faCoffee} />
-        </div></Link>
-      </div>
-    </article>
-  );
-};
 
 export default CardPeople;
