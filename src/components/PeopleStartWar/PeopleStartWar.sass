@@ -2,9 +2,14 @@
 .people
     width: 100%
     display: flex
-
 .people__card
-    @include spaceBlock(30%)
-
+        @include spaceBlock(100%)
 .people__detail
-    @include spaceBlock(70%)
+     display: none
+
+@media (min-width: 48rem)
+    .people__card
+        @include spaceBlock(30%)
+    .people__detail
+        @include spaceBlock(70%)
+        display: block
