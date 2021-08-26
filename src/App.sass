@@ -5,34 +5,40 @@
   margin: 0
   padding: 0
   box-sizing: border-box
+
 body
     background-color: $white
     font-family: $font-family
+
 a
     text-decoration: none
     color:black
+
 p, h2
     margin: 0px !important
 
+main
+    height: 100vh
+    width: 100vw
+
+section
+    height: 85%
+
+h2
+    font-size: $title
+
 .app-container
     @include displayFlex(column, center, center)
+
 .header
     display: flex
     align-items: center
-    width: 100%
+    @include spaceBlock(100%)
     height: 3.25rem
     font-size: $title
     background-color: $black
     color: $white
-.header__title
-    margin-left: 2.06rem
-main
-    height: 100vh
-    width: 100vw
-section
-    height: 85%
-h2
-    font-size: $title
+    
 .card
     height: 69px
     padding: 1.2rem
@@ -45,18 +51,21 @@ h2
         font-size: $subtitle
         color: $subtitle-text
 .detail
-    padding: 1rem 3rem
+    padding: 1rem 1rem
+    display: block
+    @include spaceBlock(100%)
     > span
         display: flex
         justify-content: space-between
         height: 49px
-        padding: 1rem 2rem
+        padding: 1rem 0rem
         font-size: $title
         color: $subtitle-text
         @include border(0px, 0px, 1px, 0px)
     p
         color: $title-text
         font-size: $title
+
 .error
     color: red
     @include displayFlex(column, center, center)

@@ -1,12 +1,26 @@
-
+.header
+    display: flex
+    justify-content: center
 .header__title--display
     display: none
 .header__icon--inactive
     display: none
 .header__icon--active
     display: block
+    justify-content: center
+.icon
+    position: absolute
+    left: 30px
+    top: 18px
+
 @media (min-width: 48rem)
+    .header
+        justify-content: flex-start
+    .header__title
+        margin-left: 2.06rem
     .header__title--display
         display: block
     .header__icon--active
         display: none
+
+        

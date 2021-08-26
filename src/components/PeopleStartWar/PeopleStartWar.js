@@ -4,8 +4,8 @@ import CardPeople from "./../CardPeople/CardPeople";
 import "./PeopleStartWar.sass";
 import Header from "./../Header/Header";
 
-
 const PeopleStartWar = () => {
+  
   const [isVisible, setIsVisible] = useState(false);
 
   return (

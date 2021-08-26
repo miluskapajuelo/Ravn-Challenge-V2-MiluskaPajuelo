@@ -1,5 +1,6 @@
 import { gql } from "@apollo/client";
 
+//query to get all people in GraphQL
 export const TRACKS = gql`query Root{
   allPeople{
       people{
@@ -16,6 +17,7 @@ export const TRACKS = gql`query Root{
 }
 `;
 
+//query to filter by id in GraphQL
 export const idPeople=(item)=>{
   if(item !== ''){const IDITEM = gql`query Root {
     person(id: "${item}") {
