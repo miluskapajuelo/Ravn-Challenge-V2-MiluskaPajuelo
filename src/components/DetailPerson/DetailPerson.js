@@ -1,12 +1,14 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import {idPeople} from "./../../module/query"
-import {loadingPage, errorPage} from "./../../Assets/message"
+import { idPeople } from "./../../module/query"
+import { loadingPage, errorPage } from "./../../assets/message"
 
 
 const DetailPerson = ({idPerson}) => { 
+
+    //idPeople is a function to make queries in GraphQL
+    const id = idPeople(idPerson)
     
-    const id=  idPeople(idPerson)
     const {loading, error, data}= useQuery(id)
     if(loading) return loadingPage;
     if(error) return errorPage;

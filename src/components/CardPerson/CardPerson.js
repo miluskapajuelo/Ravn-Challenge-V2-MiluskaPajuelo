@@ -8,9 +8,9 @@ import { useHistory} from "react-router-dom"
 const CardPerson = ({ people, setIsVisible }) => {
 
   const history = useHistory();
-  
+   //sent data (people) by routing 
   const detailPeople = () => {
-    history.push({ pathname: '/people', search:`${people.id}`, state: {id:people.id} })
+    history.push({ pathname: '/people', search:`${people.id}`, state: people})
     setIsVisible(true)
   };
   
