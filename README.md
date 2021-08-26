@@ -7,7 +7,7 @@ Link designs: <a href="https://www.figma.com/file/Ceoqa8DbrtyKoOBDR77ktm/Ravn-Co
 Link project: <a href="https://pensive-wozniak-a4e9a0.netlify.app" target="_blank"></strong>Open application</a>
 
 
-<a href="https://ibb.co/zNcFPS9"><img src="https://i.ibb.co/zNcFPS9/aplication.gif" alt="aplication"></a>
+![aplication](./public/aplication.gif)
 
 ## Requirement
 ```
