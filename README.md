@@ -4,7 +4,7 @@ The goal of this challenge is to create a web app that allows you to browse the 
 
 Link designs: <a href="https://www.figma.com/file/Ceoqa8DbrtyKoOBDR77ktm/Ravn-Code-Challenge?node-id=34%3A13" target="_blank"></strong>Open figma</a>
 
-Link: <a href="https://pensive-wozniak-a4e9a0.netlify.app" target="_blank"></strong>Open application</a>
+Link project: <a href="https://pensive-wozniak-a4e9a0.netlify.app" target="_blank"></strong>Open application</a>
 
 ## Requirement
 ```
@@ -33,17 +33,12 @@ Direct endpoint: https://swapi-graphql.netlify.app/.netlify/functions/index
 
 ## Technologies used
 
-|-----------------------|
-|        React 17       |   
-|-----------------------|
-|       Ant design      |
-|-----------------------|
-|         GraphQL       |
-|-----------------------|
-|          SASS         |
-|-----------------------|
-|       Fortawesome     |
-|-----------------------|
-
+ | Technologies    |
+ |-----------------|
+ | React 17        |
+ | Ant design      |
+ | GraphQL         |
+ | SASS            |
+ | Fortawesome     |
 ## Create by
 <a href="https://github.com/miluskapajuelo" target="_blank"></strong>Miluska Pajuelo</a>
