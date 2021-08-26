@@ -16,7 +16,7 @@ const CardPeople = ({setIsVisible}) => {
   return (
     <>
       {dataPeople.map((people) => (
-        <CardPerson key={people.id} people={people} setIsVisible={setIsVisible}/>
+        <CardPerson key={people.id} people={people} setIsVisible={setIsVisible} />
       ))}
     </>
   );
