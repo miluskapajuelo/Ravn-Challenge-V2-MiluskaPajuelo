@@ -8,7 +8,7 @@ const DetailPeople = () => {
 
 
   const location = useLocation();
-  return (<>{location.state !== undefined ? <DetailPerson idPerson={location.state.id}/>:''}</>)
+  return (<>{location.state !== undefined ? <DetailPerson className="DetailPerson" idPerson={location.state.id}/>:''}</>)
   };
 
 export default DetailPeople;

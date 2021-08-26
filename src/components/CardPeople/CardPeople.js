@@ -4,7 +4,7 @@ import { TRACKS } from "../../module/query";
 import CardPerson from "./../CardPerson/CardPerson";
 import { loadingPage, errorPage } from "./../../Assets/message";
 
-const CardPeople = () => {
+const CardPeople = ({setIsVisible}) => {
   const { loading, error, data } = useQuery(TRACKS);
   if (loading) return loadingPage;
   if (error) return errorPage;
@@ -13,7 +13,7 @@ const CardPeople = () => {
   return (
     <>
       {dataPeople.map((people) => (
-        <CardPerson key={people.id} people={people} />
+        <CardPerson key={people.id} people={people} setIsVisible={setIsVisible} />
       ))}
     </>
   );

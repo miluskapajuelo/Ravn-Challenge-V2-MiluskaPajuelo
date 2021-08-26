@@ -5,12 +5,13 @@ import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { useHistory} from "react-router-dom"
 
 
-const CardPerson = ({ people }) => {
+const CardPerson = ({ people, setIsVisible }) => {
 
   const history = useHistory();
   
   const detailPeople = () => {
     history.push({ pathname: '/people', search:`${people.id}`, state: {id:people.id} })
+    setIsVisible(true)
   };
   
   return (
