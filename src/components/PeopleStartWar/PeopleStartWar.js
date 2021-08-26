@@ -13,7 +13,7 @@ const PeopleStartWar = () => {
     <Header setIsVisible={setIsVisible} isVisible={isVisible} />
     <main>
       <section className="people">
-        <aside className={isVisible===true?'people__card--innactive' :'people__card'}>
+        <aside className={isVisible===true?'people__card--innactive custombar1' :'people__card custombar1'}>
           <CardPeople isVisible={isVisible} setIsVisible={setIsVisible}/>
         </aside>
         <div className={isVisible===false?'people__detail--innactive':"people__detail"}>

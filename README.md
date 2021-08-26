@@ -6,6 +6,9 @@ Link designs: <a href="https://www.figma.com/file/Ceoqa8DbrtyKoOBDR77ktm/Ravn-Co
 
 Link project: <a href="https://pensive-wozniak-a4e9a0.netlify.app" target="_blank"></strong>Open application</a>
 
+
+<a href="https://ibb.co/zNcFPS9"><img src="https://i.ibb.co/zNcFPS9/aplication.gif" alt="aplication"></a>
+
 ## Requirement
 ```
 React 17
@@ -13,6 +16,7 @@ Node 14
 ```
 ## Execution of the app
 ```
+ - git clone the repo
  - npm install
  - npm start
  - Access to application: http://localhost:3000

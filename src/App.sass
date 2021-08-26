@@ -69,3 +69,16 @@ h2
 .error
     color: red
     @include displayFlex(column, center, center)
+//scrollbar
+.custombar1 
+    overflow-y: scroll
+    height: 700px    
+
+.custombar1::-webkit-scroll,
+.custombar1::-webkit-scrollbar 
+    width: 0.5025rem
+    background-color: rgba(245, 245, 245, 1)
+
+.custombar1::-webkit-scrollbar-thumb 
+    border-radius: 0.5rem
+    background-color: rgba(196, 196, 196, 1)
