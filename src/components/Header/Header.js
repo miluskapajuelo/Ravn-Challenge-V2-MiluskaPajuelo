@@ -16,7 +16,7 @@ const Header = ({isVisible, setIsVisible}) => {
   return (
     <article className="header">
       <div className="header__title">
-        {isVisible?<p className="header__title inactive">{location.state.name}</p>:<p className="header__title inactive">People of Star Wars</p>}
+        {isVisible?<p className="header__title inactive">{location.state.name}</p>:<p className="header__title inactive">People</p>}
         
         <div className={isVisible===true?'header__icon--active' :'header__icon--inactive'}><FontAwesomeIcon icon={faCoffee} onClick={backToHome} className="icon"></FontAwesomeIcon></div>
       </div>
